@@ -1,0 +1,78 @@
+.tutorial-page {
+    min-height: calc(100dvh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../assets/laptop-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    color: white;
+  }
+  
+  .tutorial-overlay {
+    flex: 1;
+    background-color: rgba(117, 116, 116, 0.75);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    margin: 2rem auto;
+    box-sizing: border-box;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .steps {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  .steps a {
+    color: #0c4daa;
+    text-decoration: underline;
+  }
+  
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .input-section label {
+    font-weight: 600;
+  }
+  
+  .input-section input {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background-color: #222;
+    color: white;
+  }
+  
+  .input-section input::placeholder {
+    color: #aaa;
+  }
+  
+  .btn.primary {
+    margin-top: 2rem;
+    background-color: white;
+    color: black;
+    padding: 0.75rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: none;
+  }
+  
+  .btn.primary:hover {
+    background-color: #e0e0e0;
+  }
