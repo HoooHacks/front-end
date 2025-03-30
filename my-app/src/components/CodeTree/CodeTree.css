@@ -1,0 +1,48 @@
+/* Container */
+.code-tree-container {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border-radius: 8px;
+    padding: 12px;
+    box-sizing: border-box;
+    max-height: 100%;
+    overflow: auto;
+  }
+  
+  /* Header */
+  .code-tree-header {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Tree node wrapper */
+  .tree-node {
+    margin-left: 12px;
+  }
+  
+  /* Folder */
+  .folder-node {
+    font-weight: bold;
+    cursor: pointer;
+    margin: 6px 0;
+  }
+  
+  /* File */
+  .file-node {
+    color: #4fc1ff;
+    cursor: pointer;
+    margin: 6px 0;
+  }
+  
+  /* Expand/collapse arrow */
+  .toggle-icon {
+    margin-right: 4px;
+  }
+  
+  /* Child tree indentation */
+  .tree-children {
+    margin-left: 16px;
+    border-left: 1px dashed #444;
+    padding-left: 8px;
+  }
