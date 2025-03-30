@@ -1,23 +1,93 @@
+.analyze-page-container {
+  display: flex;
+  height: calc(100dvh - var(--header-height)); /* adjusts for fixed header */
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  .analyze-page-container {
-    display: flex;
-    height: 100%;
-    width: 100%;
+/* Each panel */
+.code-tree-panel,
+.code-details-panel {
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+
+
+
+.gpt-response-panel {
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  padding: 12px;
+  box-sizing: border-box;
+  padding-right: 30px;
+}
+
+/* Resizer Bar */
+.resizer {
+  width: 2px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: ew-resize;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.left-resizer {
+  margin-left: 12px;
+  width: 2px;
+  cursor: ew-resize;
+}
+
+/* Hover effect for resizer */
+.resizer:hover {
+  background-color: #646cff;
+}
+
+/* Collapse Button */
+.collapse-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  font-size: 24px;
+  color: #161616;
+  transition: transform 0.2s, color 0.2s, background-color 0.2s;
+  z-index: 10;
+}
+
+.collapse-button:hover {
+  background-color: rgba(250, 250, 250, 0.1);
+  color: #4b4a4a;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Spinner */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--gpt-text, #646cff);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  .code-tree-panel {
-    width: 20%;
-    border-right: 1px solid #ccc;
-    overflow-y: auto;
-  }
-  
-  .code-details-panel {
-    width: 50%;
-    border-right: 1px solid #ccc;
-    overflow-y: auto;
-  }
-  
-  .chatbot-panel {
-    width: 30%;
-    overflow-y: auto;
-  }
+}
