@@ -5,16 +5,19 @@ import TutorialPage from "./pages/TutorialPage/TutorialPage";
 import AnalyzePage from "./pages/AnalyzePage/AnalyzePage";
 import "./index.css";
 import "./App.css";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/tutorial" element={<TutorialPage />} />
-        <Route path="/analyze" element={<AnalyzePage />} />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/tutorial" element={<TutorialPage />} />
+          <Route path="/analyze" element={<AnalyzePage />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
