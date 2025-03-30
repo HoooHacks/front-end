@@ -1,16 +1,23 @@
-.analyze-page-container {
+
+  .analyze-page-container {
     display: flex;
-    height: 100vh;
+    height: 100%;
     width: 100%;
   }
   
-  .code-tree-panel,
-  .code-details-panel {
-    flex: 1;
-    overflow-y: auto;
+  .code-tree-panel {
+    width: 20%;
     border-right: 1px solid #ccc;
+    overflow-y: auto;
   }
   
   .code-details-panel {
-    border-right: none;
+    width: 50%;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .chatbot-panel {
+    width: 30%;
+    overflow-y: auto;
   }

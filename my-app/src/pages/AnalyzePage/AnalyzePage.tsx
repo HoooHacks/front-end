@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import CodeTree from '../../components/CodeTree/CodeTree';
 import CodeDetails from '../../components/CodeDetails/CodeDetails';
+import Chatbot from '../../components/Chatbot/Chatbot';
 import './AnalyzePage.css';
 
 const AnalyzePage: React.FC = () => {
@@ -15,7 +16,6 @@ const AnalyzePage: React.FC = () => {
 
   const [selectedFilePath, setSelectedFilePath] = useState<string | null>(null);
   const [selectedSnippet, setSelectedSnippet] = useState<string | null>(null);
-  const [parsedSonarIssues, setParsedSonarIssues] = useState<any>(null);
 
   const handleAnalyze = async (code: string) => {
     setSelectedSnippet(code);
@@ -47,7 +47,6 @@ const AnalyzePage: React.FC = () => {
         });
 
         const data = await res.json();
-        setParsedSonarIssues(data.parsed_issues);
         console.log('[✅ SonarQube]', data.parsed_issues);
       } catch (err) {
         console.error('[❌ SonarQube Error]', err);
@@ -72,6 +71,10 @@ const AnalyzePage: React.FC = () => {
 
       <div className="code-details-panel">
         <CodeDetails filePath={selectedFilePath} onAnalyze={handleAnalyze} />
+      </div>
+
+      <div className="chatbot-panel">
+        <Chatbot initialCode={selectedSnippet || ''} />
       </div>
     </div>
   );
