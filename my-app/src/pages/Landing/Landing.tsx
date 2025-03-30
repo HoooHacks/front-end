@@ -25,9 +25,9 @@ const Landing: React.FC = () => {
   return (
     <div className="landing">
       <div className="hero">
-        <h1 className="title">Diligence</h1>
+        <h1 className="title">CodeMate</h1>
         <p className="subtitle">
-          Enhancing Your Due Diligence Developing with AI
+          Your AI Code Coach — and Sparring Partner
         </p>
 
         <div className="button-group">
@@ -37,9 +37,6 @@ const Landing: React.FC = () => {
             </button>
           ) : (
             <>
-              <button className="btn primary" onClick={handleGoToAnalyze}>
-                Upload File
-              </button>
               <button className="btn secondary" onClick={handleGoToTutorial}>
                 Connect to GitHub
               </button>

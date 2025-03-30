@@ -9,7 +9,7 @@
   background-image: url('../../assets/laptop-bg.jpeg');
   background-size: cover;
   background-position: center;
-  color: white;
+  color: black;
   font-family: sans-serif;
   padding-top: var(--header-height); /* prevents overlap with fixed header */
   box-sizing: cover;
@@ -25,7 +25,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: 0rem;
   background: rgba(0, 0, 0, 0.7); /* dark overlay */
 }
 
@@ -40,7 +40,7 @@
 .subtitle {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  color: #ccc;
+  color: black;
 }
 
 /* Button group */
@@ -54,44 +54,52 @@
 /* Button base styles */
 .btn {
   padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 1rem;
-  min-width: 140px;
+  font-size: 1.1rem;
+  width: 200px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   cursor: pointer;
   border: none;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   text-align: center;
+  letter-spacing: 0.5px;
 }
 
 /* Primary: White Button */
 .btn.primary {
-  min-width: 140px;
-  /* background-color: white; */
-  /* color: black; */
+  background-color: white;
+  color: #111;
 }
 
 .btn.primary:hover {
-  background-color: #e0e0e0;
+  background-color: #f0f0f0;
+  transform: translateY(-1px);
 }
 
 /* Secondary: Dark Button */
 .btn.secondary {
-  background-color: #323232;
+  background-color: #1e1e1e;
   color: white;
+  border: 1px solid #444;
 }
 
 .btn.secondary:hover {
-  background-color: #666;
+  background-color: #333;
+  transform: translateY(-1px);
 }
 
-/* Logout button (optional) */
+/* Optional Logout Button */
 .btn.logout {
-  background-color: #e0e0e0;
-  color: #333;
+  background-color: #e53935;
+  color: white;
 }
 
 .btn.logout:hover {
-  background-color: #dd3333;
+  background-color: #d32f2f;
 }
