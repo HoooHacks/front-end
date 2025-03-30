@@ -1,6 +1,7 @@
 import React, { useState, useCallback, memo } from 'react';
 import { useQuery } from 'react-query';
 import './CodeTree.css';
+import { useTheme } from '../../contexts/ThemeContext';
 
 export interface TreeNode {
   name: string;
@@ -79,6 +80,7 @@ const CodeTreeNode: React.FC<CodeTreeNodeProps> = memo(({ node, onFileSelect }) 
 });
 
 const CodeTree: React.FC<CodeTreeProps> = ({ onFileSelect, githubToken, githubRepo, fileTree }) => {
+  const { isDarkMode } = useTheme();
   const { data, isLoading, error } = useQuery<TreeNode>(
     ['codeTree', githubToken, githubRepo],
     () => {
@@ -94,7 +96,7 @@ const CodeTree: React.FC<CodeTreeProps> = ({ onFileSelect, githubToken, githubRe
   if (error) return <div className="code-tree-container">Error loading code tree: {(error as Error).message}</div>;
 
   return (
-    <div className={`code-tree-container}`}>
+    <div className={`code-tree-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <div className="code-tree-header">
         <h3>Project Explorer</h3>
       </div>
